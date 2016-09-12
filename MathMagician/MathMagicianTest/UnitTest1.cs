@@ -8,14 +8,42 @@ namespace MathMagicianTest
     public class UnitTest1
     {
         [TestMethod]
-        public void SquareTest()
+        public void printIntegersTest()
         {
             Methods method = new Methods();
             Assert.IsInstanceOfType(method, typeof(Methods));
         }
 
         [TestMethod]
-        public void SquareAreaTest()
+        public void printIntegersOutputTest()
+        {
+            Methods newMethod = new Methods();
+
+        }
+
+        [TestMethod]
+        public void printFibonacciTest()
+        {
+            Methods method = new Methods();
+            Assert.IsInstanceOfType(method, typeof(Methods));
+        }
+
+        [TestMethod]
+        public void printFibonacciOutputTest()
+        {
+            Methods newMethod = new Methods();
+
+        }
+
+        [TestMethod]
+        public void printPrimesTest()
+        {
+            Methods method = new Methods();
+            Assert.IsInstanceOfType(method, typeof(Methods));
+        }
+
+        [TestMethod]
+        public void printPrimesOutputTest()
         {
             Methods newMethod = new Methods();
 
