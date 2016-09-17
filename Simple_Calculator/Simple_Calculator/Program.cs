@@ -15,6 +15,14 @@ namespace Simple_Calculator
             CodeTest.minValue(listOfNumbers);
 
             // VGT PREP
+            // String and Array Manipulation
+            string trialString = "This is a trial";
+            var newTrialSring = trialString.Split('i');
+            // var newArrayOnTrialString = newTrialSring;
+            Console.WriteLine(newTrialSring[0]);
+
+
+
             // Add Even Numbers
             int[] arr1 = new int[] { 3, 4, 5, 7, 9, 10, 12, 25, 44, 2, 3 };
             CodeTest.evenNumbersTotal(arr1);
@@ -26,9 +34,10 @@ namespace Simple_Calculator
             Solution.GetBirthMonth(Ted, "Sally");
 
             // Pirate Test
-            Dictionary<string, string[]> myDictonary = new Dictionary<string, string[]>()
+            List<string> myListOfStrings = new List<string>() { "sport", "parrot", "ports", "matey" };
+            Dictionary<string, List<string>> myDictonary = new Dictionary<string, List<string>>()
             {
-                {"English", new string [] { "sport", "parrot", "ports", "matey" } }
+                {"English" ,myListOfStrings }
             };
             var answer = SolutionII.GetPossibleWords("ortsp", myDictonary);
             foreach (string word in answer)

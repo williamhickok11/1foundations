@@ -6,35 +6,54 @@ namespace Simple_Calculator
 {
     public class SolutionII
     {
-        public static List<string> GetPossibleWords(string jumble, Dictionary<string, string[]> dictionary)
+        //static int myInt;
+
+        //static SolutionII()
+        //{
+        //    myInt = 100382;
+        //}
+
+        public static List<string> GetPossibleWords(string jumbledWord, Dictionary<string, List<string>> dictionary)
         {
-            List<string> possibleWords = new List<string>();
-            foreach (string word in dictionary["English"])
+            //var dictionaryAsIEnumerable = dictionary["English"].AsEnumerable();
+
+            var stuff = dictionary["English"]
+                .Where(x => x.Length == jumbledWord.Length)
+                .Where(x => string.Join("", x.OrderBy(y => y)) == string.Join("",jumbledWord.OrderBy(y => y)));
+
+            Console.WriteLine(string.Join(",", stuff));
+
+            List<string> possibleWordList = new List<string>();
+            foreach (string possibleWord in dictionary["English"])
             {
                 string buildAnswerString = "";
-                foreach (char character in word)
+                if (possibleWord.Length == jumbledWord.Length)
                 {
-                    foreach (char characterII in jumble)
+                    foreach (char character in possibleWord)
                     {
-                        if (character == characterII)
+                        foreach (char jumbledWordCharacter in jumbledWord)
                         {
-                            buildAnswerString += characterII;
+                            if (character == jumbledWordCharacter)
+                            {
+                                buildAnswerString += jumbledWordCharacter;
+                            }
+                            //Console.WriteLine(character);
                         }
                         //Console.WriteLine(character);
                     }
-                    //Console.WriteLine(character);
-                }
-                foreach (string wordAgain in dictionary["English"])
-                {
-                    if (wordAgain == buildAnswerString)
+                    foreach (string wordAgain in dictionary["English"])
                     {
-                        //Console.WriteLine(buildAnswerString);
-                        possibleWords.Add(buildAnswerString);
+                        if (wordAgain == buildAnswerString)
+                        {
+                            //Console.WriteLine(buildAnswerString);
+                            possibleWordList.Add(buildAnswerString);
+                        }
                     }
                 }
+                
                 //Console.WriteLine(word);
             }
-            return possibleWords;
+            return possibleWordList;
             //throw new NotImplementedException();
         }
     }

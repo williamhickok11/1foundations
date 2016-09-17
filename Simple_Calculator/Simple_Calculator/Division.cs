@@ -8,6 +8,9 @@ namespace Simple_Calculator
     {
         public static void evenNumbersTotal(int[]array)
         {
+            var evenNumberTotal = array.Where(x => x % 2 == 0).Sum();
+
+            // var nextAnswer = evenNumbersTotal + 5;
             int totalOfEvenNumbers = 0;
             for (int i = 0; i < array.Length; i++)
             {

@@ -8,7 +8,7 @@ namespace Simple_Calculator
 {
     public class Multiplication
     {
-        public static double multiplication(double first, double second)
+        public double multiplication(double first, double second)
         {
             double answer = first * second;
 
