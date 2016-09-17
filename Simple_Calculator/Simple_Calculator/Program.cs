@@ -15,6 +15,10 @@ namespace Simple_Calculator
             CodeTest.minValue(listOfNumbers);
 
             // VGT PREP
+            // Alphabits
+            Alphabits AlphabitsAnswer = new Alphabits();
+            AlphabitsAnswer.addChar();
+            
             // String and Array Manipulation
             string trialString = "This is a trial";
             var newTrialSring = trialString.Split('i');
