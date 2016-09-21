@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Addition.cs" />
     <Compile Include="Alphabits.cs" />
+    <Compile Include="BagOLute\BagOLoot.cs" />
+    <Compile Include="BagOLute\Loot.cs" />
     <Compile Include="Division.cs" />
     <Compile Include="genericList.cs" />
     <Compile Include="Multiplication.cs" />

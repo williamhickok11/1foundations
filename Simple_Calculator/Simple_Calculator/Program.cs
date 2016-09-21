@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Simple_Calculator.BagOLute;
+
 
 namespace Simple_Calculator
 {
@@ -9,6 +11,17 @@ namespace Simple_Calculator
 
         static void Main(string[] args)
         {
+            SolutionII mySolution = new SolutionII();
+
+            try {
+                mySolution.returnNewString("45ad5g5affr");
+
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+                Console.WriteLine("Invalid argument. You have repeating numbers");
+            }
+
             CodeTest.oddNumbers(3, 14);
             CodeTest.reverseSentence("this is a trial");
             List<int> listOfNumbers = new List<int>(new int[] { 7, 3, 6, 6, -4, 9, 8, 75, 9, 22 });
@@ -16,9 +29,13 @@ namespace Simple_Calculator
 
             // VGT PREP
             // Alphabits
-            Alphabits AlphabitsAnswer = new Alphabits();
-            AlphabitsAnswer.addChar();
-            
+            //Alphabits AlphabitsAnswer = new Alphabits();
+            //AlphabitsAnswer.addChar();
+
+            // Bag O Loot
+            BagOLoot Bag = new BagOLoot();
+            Bag.choosePath();
+
             // String and Array Manipulation
             string trialString = "This is a trial";
             var newTrialSring = trialString.Split('i');

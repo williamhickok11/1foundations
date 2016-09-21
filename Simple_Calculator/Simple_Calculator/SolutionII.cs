@@ -13,6 +13,50 @@ namespace Simple_Calculator
         //    myInt = 100382;
         //}
 
+        private string newString = "";
+        //I use 10 becasue I can't set it to null, but I know this is a two digit number,
+        //which will never come up in my foreach loop
+        private int invalidDublicatedInt = 10;
+        private int numToRepeatLetter;
+        private bool numberCheckerFlag = false;
+
+        public string returnNewString(string input)
+        {
+            Console.WriteLine("VGT TEST");
+            foreach (char x in input)
+            {
+                string y = x.ToString();
+                if (int.TryParse(y, out numToRepeatLetter))
+                {
+                    numberCheckerFlag = true;
+                    if (invalidDublicatedInt != 10)
+                    {
+                        throw new ArgumentException("not a vaild entry, you have repeating numbers", "input");
+                    }
+                    invalidDublicatedInt = numToRepeatLetter;
+                    continue;
+                } else if (numberCheckerFlag == false)
+                {
+                    newString += x;
+                    invalidDublicatedInt = 10;
+                } else if (numberCheckerFlag == true)
+                {
+                    for(var i = 0; i < invalidDublicatedInt; i++)
+                    {
+                        newString += x;
+                    }
+                    invalidDublicatedInt = 10;
+                    numberCheckerFlag = false;
+                }
+            }
+            Console.WriteLine(newString);
+            Console.WriteLine("END");
+
+            return input;
+        }
+
+
+
         public static List<string> GetPossibleWords(string jumbledWord, Dictionary<string, List<string>> dictionary)
         {
             //var dictionaryAsIEnumerable = dictionary["English"].AsEnumerable();
