@@ -14,7 +14,7 @@ namespace Simple_Calculator
             SolutionII mySolution = new SolutionII();
 
             try {
-                mySolution.returnNewString("45ad5g5affr");
+                mySolution.returnNewString("5ad2g7rffr"); == aaaadggrrrrrrrffr
 
             }
             catch (Exception ex) {
